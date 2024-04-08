@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(63 32 90) ;
+
+    }
+    .cont{
+        margin: 160px 250px;
+    }
+    #para{
+        font-size: 70px;
+        font-weight: 500;
+        margin: 40px 10px;
+        color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+    }
+    #para span{
+        width: 550px;
+    font-size: 70px;
+    font-weight: 500;
+    color: rgb(17, 92, 17);
+    border-bottom: 3px solid;
+    }
+  
+    #input1{
+        height: 30px;
+          width: 30%;
+        background-color: whitesmoke;
+        border: 0;
+        outline:0;
+        border-radius: 7px;
+        padding: 10px;
+    }
+    #btn{
+        border: 0;
+        outline: 0;
+        height: 40px;
+        width: 20%;
+        background-color: #019f55 ;
+        padding: 5px;
+        margin: 10px 0px;
+        border-radius: 5px;
+        cursor: pointer;
+        
+    }
+ 
+
+</style>
+<body>
+    <div class="cont">
+    <p id="para">Generate a <br> <span>Random password</span></p>
+    <div class="input">
+        <input id="input1" type="text" placeholder="Password"> <br>
+
+    </div>
+    <button onclick="createPass()" id="btn">Generate Password</button>
+    </div>
+    <script>
+        let passwordBox= document.querySelector('input');
+        let button= document.getElementById('btn');
+
+        let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+        let numbers = '1234567890';
+
+
+
+       function createPass(){
+        let password=" ";
+        
+         password += upperCase[ 0+Math.floor(Math.random()*26)];
+        password +=  lowerCase[0+ Math.floor(Math.random()*26)];
+        password +=  numbers[Math.floor(Math.random()*10)];
+
+        
+          passwordBox.value = password;
+       }
+
+    </script>
+</body>
+</html>
